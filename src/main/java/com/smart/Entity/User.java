@@ -24,6 +24,7 @@ public class User {
 	@Column(unique=true)
 	private String email;
 	private String password;
+	private String phone;
 	private String role;
 	private boolean enabled;
 	private String imageUrl;
@@ -36,24 +37,29 @@ public class User {
 	
 	
 	/********/
-	public User(int id, String name, String email, String password, String role, Boolean enabled, String imageUrl,
-			String about) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		this.enabled = enabled;
-		this.imageUrl = imageUrl;
-		this.about = about;
-	}
+	
+	
+	
 	/********/
 
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public User(int id, String name, String email, String password, String phone, String role, boolean enabled,
+			String imageUrl, String about, List<Contact> contacts) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.phone = phone;
+		this.role = role;
+		this.enabled = enabled;
+		this.imageUrl = imageUrl;
+		this.about = about;
+		this.contacts = contacts;
 	}
 	/********/
 	public int getId() {
@@ -114,12 +120,22 @@ public class User {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+	
+	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	/*********/
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
-				+ ", enabled=" + enabled + ", imageUrl=" + imageUrl + ", about=" + about + "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", phone=" + phone
+				+ ", role=" + role + ", enabled=" + enabled + ", imageUrl=" + imageUrl + ", about=" + about
+				+ ", contacts=" + contacts + "]";
 	}
+	
 	
 	
 	

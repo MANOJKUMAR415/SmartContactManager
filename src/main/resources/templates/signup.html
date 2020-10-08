@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+
+
+<title>Create a Account</title>
+
+
+
+
+
+
+</head>
+<body>
+	<section>
+		<div class="container mt-3">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="card bg-light">
+						<div class="card-body  mx-auto">
+							<h4 class="card-title mt-1 text-center">Create Account</h4>
+							<p class="text-center">Get Start With Free Account ....</p>
+							<a href="#!" class="btn btn-block btn-danger"><i
+								class="fa fa-google ml-3"></i> Login With Google</a> <a href="#!"
+								class="btn btn-block btn-primary"><i
+								class="fa fa-facebook-square  ml-3"></i> Login With Facebook</a>
+
+							<p class="divider">
+								<span class="bg-light">OR</span>
+							</p>
+
+							<!-- 	                        	FORM START                                   -->
+
+							<form action="" th:action="@{/register}" method="post" th:object="${user}">
+								<div class="form-group input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i class="fa fa-user"></i></span>
+									</div>
+
+									<input type="text" class="form-control" id="name" name="name"
+										aria-describedby="emailHelp" placeholder="Enter Name" th:value="${user.name}" required />
+								</div>
+
+
+
+								<div class="form-group input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fa fa-envelope"></i></span>
+									</div>
+									<input type="email" class="form-control" id="mail" name="email"
+										aria-describedby="emailHelp" placeholder="Enter Email" th:value="${user.email}"
+										required />
+								</div>
+
+
+								<div class="form-group input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i
+											class="fa fa-unlock-alt"></i></span>
+									</div>
+									<input type="password" class="form-control" id="password" name="password"
+										aria-describedby="emailHelp" placeholder="Enter Password"
+										required />
+								</div>
+
+
+
+								<div class="form-group input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><i class="fa fa-phone"></i>
+										</span>
+									</div>
+									<!-- 									<select class="custom-select" style="max-width: 100px"> -->
+									<!-- 										<option selected disabled>SELECT</option> -->
+									<!-- 										<option>+91</option> -->
+									<!-- 										<option>+92</option> -->
+									<!-- 										<option>+93</option> -->
+									<!-- 										<option>+94</option> -->
+									<!-- 										<option>+95</option> -->
+									<!-- 										<option>+96</option> -->
+									<!-- 										<option>+97</option> -->
+									<!-- 										<option>+98</option> -->
+									<!-- 										<option>+99</option> -->
+									<!-- 									</select>  -->
+									<input type="number" id="phone" class="form-control" name="phone"
+										placeholder="Enter Number" th:value="${user.phone}" required ></input>
+								</div>
+
+
+
+
+								<div class="form-group  ">
+									<label for="exampleFormControlTextarea1"> About You</label>
+									<textarea class="form-control" id="textarea" name="about"
+										placeholder="Enter something..." rows="3" th:value="${user.about}" required></textarea>
+								</div>
+
+
+
+<!-- 								<div class="form-group input-group"> -->
+<!-- 									<div class="input-group-prepend"> -->
+<!-- 										<span>Upload Image</span> -->
+<!-- 									</div> -->
+<!-- 									<input type="file" class="form-control-file" id="file" required /> -->
+<!-- 								</div> -->
+								
+								<div class="form-group form-check">
+								
+								<input type="checkbox"  name="agreement" class="form-check-input" id="agree"/>
+								<label for="agreement"> Accept Terms & Conditions</label>
+								</div>
+
+
+								<div class="container text-center">
+									<button type="submit" class="btn  btn-outline-success">
+										Register</button>
+
+									<button type="reset" class="btn  btn-outline-danger">
+										Reset</button>
+								</div>
+
+								<div>
+									<p class="text-center mt-3">
+										Have an account <a href="" th:href="@{/login}">Login</a>
+									</p>
+								</div>
+							</form>
+
+							<!--                                FROM END                                     -->
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
